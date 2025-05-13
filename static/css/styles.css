@@ -1,0 +1,381 @@
+.text-gradient {
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.hover-section {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.hover-list-item {
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.hover-list-item:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  transform: translateX(5px);
+}
+
+.hover-badge {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-badge:hover {
+  background-color: #0d6efd;
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.social-link {
+  transition: all 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  color: #0d6efd !important;
+  transform: translateY(-2px);
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  transition: width 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+  width: 100px;
+}
+
+.profile-image {
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.2);
+}
+
+.hover-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-btn {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.hover-btn:hover {
+  opacity: 0.9;
+}
+
+.hover-row {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-row:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.hover-input {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.hover-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.hover-checkbox {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.hover-checkbox:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.badge {
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.status-badge {
+  padding: 0.5rem 0.75rem;
+}
+
+.status-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+}
+
+.form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.btn-group .btn {
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+}
+
+.btn-group .btn:hover {
+  opacity: 0.9;
+}
+
+.table-header {
+  background: linear-gradient(to right, #f8f9fa, #ffffff);
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table-header th {
+  font-weight: 600;
+  color: #495057;
+  padding: 1rem 0.75rem;
+}
+
+.empty-state {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+}
+
+.empty-state-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state-icon i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #0b5ed7, #0bb6d9);
+}
+
+.btn-outline-primary {
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border-color: transparent;
+}
+
+.btn-outline-danger {
+  border: 2px solid #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background: linear-gradient(45deg, #dc3545, #ff4d5a);
+  border-color: transparent;
+}
+
+.hover-link {
+  position: relative;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.hover-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.hover-link:hover {
+  color: #0d6efd;
+}
+
+.hover-link:hover::after {
+  width: 100%;
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.table {
+  margin-bottom: 0;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1rem 0.75rem;
+}
+
+.table-header th {
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.status-badge {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.btn-group .btn {
+  padding: 0.5rem;
+  margin: 0 0.125rem;
+}
+
+.btn-group .btn i {
+  font-size: 0.875rem;
+}
+
+.flash-alert {
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  min-width: 300px;
+  max-width: 400px;
+  background: white;
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+  border-left: 4px solid #198754;
+  color: #0f5132;
+}
+
+.alert-danger {
+  border-left: 4px solid #dc3545;
+  color: #842029;
+}
+
+.alert-info {
+  border-left: 4px solid #0dcaf0;
+  color: #055160;
+}
+
+.alert-warning {
+  border-left: 4px solid #ffc107;
+  color: #664d03;
+}
+
+.alert i {
+  font-size: 1.25rem;
+}
+
+.alert-success i {
+  color: #198754;
+}
+
+.alert-danger i {
+  color: #dc3545;
+}
+
+.alert-info i {
+  color: #0dcaf0;
+}
+
+.alert-warning i {
+  color: #ffc107;
+}
+
+.btn-close {
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.flash-alert.fade {
+  animation: slideOut 1s ease-out forwards;
+}

@@ -1,0 +1,278 @@
+{% extends "__layout__.html" %} {% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0 rounded-4 mb-4">
+        <div class="card-body p-5">
+          <div class="text-center mb-4">
+            <h1 class="card-title mb-3 display-4 fw-bold text-gradient">
+              About Todox
+            </h1>
+            <p class="lead text-muted">
+              Todox is a simple and modern todo app built with Flask, Bootstrap,
+              and PostgreSQL.
+            </p>
+          </div>
+          <hr class="my-4" />
+          <div class="creator-section p-4 bg-light rounded-3 mb-4">
+            <h4 class="mb-3 d-flex align-items-center section-title">
+              <i class="bi bi-person-workspace me-2"></i>
+              Creator
+            </h4>
+            <div class="d-flex align-items-center mb-2">
+              <img
+                src="{{ url_for('static', filename='my-image.jpg') }}"
+                alt="Muhammad Hamza"
+                class="rounded-circle me-3"
+                style="
+                  width: 60px;
+                  height: 60px;
+                  object-fit: cover;
+                  border: 2px solid #0d6efd;
+                "
+              />
+              <div>
+                <h5 class="mb-0">Muhammad Hamza</h5>
+                <div class="d-flex gap-3 mt-1">
+                  <a
+                    href="https://github.com/hamza-dev"
+                    target="_blank"
+                    class="text-dark text-decoration-none"
+                    title="GitHub"
+                  >
+                    <i class="bi bi-github fs-5"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/muhammadhamza6277"
+                    target="_blank"
+                    class="text-dark text-decoration-none"
+                    title="LinkedIn"
+                  >
+                    <i class="bi bi-linkedin fs-5"></i>
+                  </a>
+                  <a
+                    href="mailto:hamzarakh786@gmail.com"
+                    class="text-dark text-decoration-none"
+                    title="Email"
+                  >
+                    <i class="bi bi-envelope-fill fs-5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 mb-0">
+              I'm a passionate full-stack developer with expertise in both
+              modern and traditional web technologies. I love building scalable,
+              maintainable applications and exploring new technologies.
+            </p>
+          </div>
+          <hr class="my-4" />
+          <div class="expertise-section">
+            <h4 class="mb-4 d-flex align-items-center section-title">
+              <i class="bi bi-code-square me-2"></i>
+              Technical Expertise
+            </h4>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded-3">
+                  <h5 class="mb-3 d-flex align-items-center text-primary">
+                    <i class="bi bi-server me-2"></i>
+                    Backend & Full-Stack
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>Elixir/Phoenix:</strong>
+                        <div class="text-muted small">
+                          Building real-time applications with LiveView
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>Python/Flask:</strong>
+                        <div class="text-muted small">
+                          RESTful APIs and web applications
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>MERN Stack:</strong>
+                        <div class="text-muted small">
+                          Full-stack JavaScript development
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="h-100 p-4 bg-light rounded-3">
+                  <h5 class="mb-3 d-flex align-items-center text-primary">
+                    <i class="bi bi-phone me-2"></i>
+                    Mobile & Frontend
+                  </h5>
+                  <ul class="list-unstyled">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>React Native:</strong>
+                        <div class="text-muted small">
+                          Cross-platform mobile development
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>React:</strong>
+                        <div class="text-muted small">
+                          Modern frontend development
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <i class="bi bi-check-circle-fill text-success me-2"></i>
+                      <div>
+                        <strong>Bootstrap:</strong>
+                        <div class="text-muted small">
+                          Responsive web design
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4" />
+          <div class="usage-section">
+            <h4 class="mb-4 d-flex align-items-center section-title">
+              <i class="bi bi-rocket-takeoff me-2"></i>
+              How to Use
+            </h4>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="p-4 bg-light rounded-3 h-100">
+                  <h5 class="mb-3 d-flex align-items-center text-primary">
+                    <i class="bi bi-plus-circle me-2"></i>
+                    Creating & Managing
+                  </h5>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-1-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Add New Todo</strong>
+                        <div class="text-muted small">
+                          Click the "Add New" button in the top right corner to
+                          create a new task
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-2-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Edit Existing Todo</strong>
+                        <div class="text-muted small">
+                          Use the pencil icon to modify title, description, or
+                          completion status
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <i class="bi bi-3-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Delete Todo</strong>
+                        <div class="text-muted small">
+                          Click the trash icon to remove a task permanently
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-4 bg-light rounded-3 h-100">
+                  <h5 class="mb-3 d-flex align-items-center text-primary">
+                    <i class="bi bi-check2-circle me-2"></i>
+                    Task Management
+                  </h5>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-4-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Mark as Complete</strong>
+                        <div class="text-muted small">
+                          Edit a task and check the "Completed" box to mark it
+                          as done
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mb-3 d-flex align-items-start">
+                      <i class="bi bi-5-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Track Progress</strong>
+                        <div class="text-muted small">
+                          View completion status with color-coded badges (green
+                          for completed, red for pending)
+                        </div>
+                      </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                      <i class="bi bi-6-circle-fill text-primary me-2"></i>
+                      <div>
+                        <strong>Auto-Save</strong>
+                        <div class="text-muted small">
+                          All changes are automatically saved to the database in
+                          real-time
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4" />
+          <div class="tech-stack-section">
+            <h4 class="mb-3 d-flex align-items-center section-title">
+              <i class="bi bi-tools me-2"></i>
+              Tech Stack
+            </h4>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge p-2 border border-primary text-primary">
+                Python
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                Flask
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                PostgreSQL
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                SQLAlchemy
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                Bootstrap 5
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                HTML
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                CSS
+              </span>
+              <span class="badge p-2 border border-primary text-primary">
+                Bootstrap Icons
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

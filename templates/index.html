@@ -1,0 +1,179 @@
+{% extends "__layout__.html" %} {% block content %}
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h1 class="h3 mb-1 text-gradient">Todo List</h1>
+      <p class="text-muted small mb-0">Manage your tasks efficiently</p>
+    </div>
+    <a
+      type="button"
+      class="btn btn-primary hover-btn d-flex align-items-center"
+      href="/todos/new"
+    >
+      <i class="bi bi-plus-lg me-1"></i> Add New Todo
+    </a>
+  </div>
+
+  {% if todos|length == 0 %}
+  <div class="card shadow-sm empty-state">
+    <div class="card-body text-center py-5">
+      <div class="empty-state-icon mb-3">
+        <i class="bi bi-clipboard-x"></i>
+      </div>
+      <h5 class="text-muted mb-2">No Todos Found</h5>
+      <p class="text-muted mb-3">Start by adding a new todo!</p>
+      <a href="/todos/new" class="btn btn-primary hover-btn">
+        <i class="bi bi-plus-lg me-1"></i> Create Your First Todo
+      </a>
+    </div>
+  </div>
+  {% else %}
+  <div class="card shadow-sm border-0">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead>
+          <tr class="table-header">
+            <th scope="col" class="ps-4 py-3">#</th>
+            <th scope="col" class="py-3">Title</th>
+            <th scope="col" class="py-3">Description</th>
+            <th scope="col" class="py-3">Status</th>
+            <th scope="col" class="py-3">Created At</th>
+            <th scope="col" class="text-end pe-4 py-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todos %}
+          <tr class="hover-row">
+            <td class="ps-4 py-3">{{ loop.index }}</td>
+            <td class="py-3">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check2-square text-primary me-2"></i>
+                <span class="fw-medium">{{ todo.title }}</span>
+              </div>
+            </td>
+            <td class="py-3 text-muted">{{ todo.description }}</td>
+            <td class="py-3">
+              <span
+                class="badge p-2 {{ 'bg-success-subtle text-success' if todo.completed else 'bg-warning-subtle text-warning' }} status-badge"
+              >
+                <i
+                  class="bi {{ 'bi-check-circle-fill' if todo.completed else 'bi-clock-fill' }} me-1"
+                ></i>
+                {{ 'Completed' if todo.completed else 'Pending' }}
+              </span>
+            </td>
+            <td class="py-3 text-muted">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-calendar3 me-2"></i>
+                {{ todo.created_at.strftime("%d-%m-%Y at %H:%M %p") }}
+              </div>
+            </td>
+            <td class="text-end pe-4 py-3">
+              <div class="btn-group">
+                {% if not todo.completed %}
+                <a
+                  href="/todos/edit/{{ todo.id }}"
+                  class="btn btn-sm btn-outline-primary hover-btn"
+                  title="Edit"
+                >
+                  <i class="bi bi-pencil"></i>
+                </a>
+                {% endif %}
+                <a
+                  href="/delete-todo/{{ todo.id }}"
+                  class="btn btn-sm btn-outline-danger hover-btn"
+                  title="Delete"
+                >
+                  <i class="bi bi-trash"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+{% if action in ["new", "edit"] %}
+<!-- Edit Todo Modal -->
+<div class="modal fade show" id="editTodoModal" style="display: block">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-5" id="editTodoModalLabel">
+          <i
+            class="bi {{ 'bi-plus-circle' if action == 'new' else 'bi-pencil-square' }} me-2"
+          ></i>
+          {{ action.capitalize() }} Todo
+        </h1>
+        <a href="/" class="btn-close" aria-label="Close"></a>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/todos/{{ action }}{% if action == 'new' %}{% else %}/{{ todo.id }}{% endif %}"
+          method="post"
+        >
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+              placeholder="Enter title"
+              name="title"
+              type="text"
+              class="form-control hover-input"
+              id="title"
+              value="{{ todo.title }}"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              placeholder="Enter description"
+              class="form-control text-wrap hover-input"
+              id="description"
+              name="description"
+              rows="3"
+              required
+            >
+{{ todo.description }}</textarea
+            >
+          </div>
+          <div class="mb-4">
+            <div class="form-check">
+              <input
+                name="completed"
+                type="checkbox"
+                class="form-check-input hover-checkbox"
+                id="completed"
+                value="1"
+                {%
+                if
+                todo.completed
+                %}checked{%
+                endif
+                %}
+              />
+              <label for="completed" class="form-check-label ms-2"
+                >Completed</label
+              >
+            </div>
+          </div>
+          <div class="text-end">
+            <a href="/" class="btn btn-light me-2 hover-btn">Cancel</a>
+            <button type="submit" class="btn btn-primary hover-btn">
+              <i
+                class="bi {{ 'bi-plus-lg' if action == 'new' else 'bi-check-lg' }} me-1"
+              ></i>
+              {{ "Create" if action == "new" else "Update" }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show"></div>
+{% endif %} {% endblock %}
