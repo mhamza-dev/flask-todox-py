@@ -206,4 +206,7 @@ def about():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    if os.getenv("FLASK_ENV") == "development":
+        app.run(debug=True, port=8000)
+    else:
+        app.run()
