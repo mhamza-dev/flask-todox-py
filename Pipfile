@@ -8,6 +8,7 @@ flask = "*"
 psycopg2-binary = "*"
 sqlalchemy-utils = "*"
 python-dotenv = "*"
+serverless-wsgi = "*"
 
 [dev-packages]
 

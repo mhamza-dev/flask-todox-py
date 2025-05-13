@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from serverless_wsgi import handle_request
 from datetime import datetime
 import os
 from dotenv import load_dotenv
@@ -116,6 +117,11 @@ if os.getenv("FLASK_ENV") == "development":
 else:
     if not tasks:
         create_sample_todos()
+
+
+# Handle requests from Vercel
+def handler(event, context):
+    return handle_request(app, event, context)
 
 
 @app.route("/", methods=["GET", "POST"])
